@@ -1,0 +1,866 @@
+[debug] [2023-12-26T20:10:02.893Z] ----------------------------------------------------------------------
+[debug] [2023-12-26T20:10:02.896Z] Command:       /Users/macbookpro/.nvm/versions/node/v18.17.0/bin/node /Users/macbookpro/.nvm/versions/node/v16.17.0/bin/firebase deploy --debug --only functions
+[debug] [2023-12-26T20:10:02.897Z] CLI Version:   13.0.2
+[debug] [2023-12-26T20:10:02.897Z] Platform:      darwin
+[debug] [2023-12-26T20:10:02.897Z] Node Version:  v18.17.0
+[debug] [2023-12-26T20:10:02.899Z] Time:          Tue Dec 26 2023 22:10:02 GMT+0200 (Eastern European Standard Time)
+[debug] [2023-12-26T20:10:02.900Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-26T20:10:02.983Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-26T20:10:02.985Z] > authorizing via signed-in user (ahmed.a.kasem18@gmail.com)
+[debug] [2023-12-26T20:10:02.985Z] [iam] checking project chatly-89d22 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-26T20:10:02.990Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions [none]
+[debug] [2023-12-26T20:10:02.991Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:10:02.991Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-26T20:10:03.402Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions 200
+[debug] [2023-12-26T20:10:03.403Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-26T20:10:03.404Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-26T20:10:03.404Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-26T20:10:04.308Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-26T20:10:04.309Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'chatly-89d22'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2023-12-26T20:10:23.270Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 [none]
+[debug] [2023-12-26T20:10:25.208Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 200
+[debug] [2023-12-26T20:10:25.209Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 {"projectId":"chatly-89d22","projectNumber":"930897860276","displayName":"chatly","name":"projects/chatly-89d22","resources":{"hostingSite":"chatly-89d22"},"state":"ACTIVE","etag":"1_a2c10ac2-069e-4089-bda2-e705e6546bf1"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-26T20:10:25.211Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-26T20:10:25.211Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:10:25.213Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-26T20:10:25.213Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:10:25.214Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-26T20:10:25.215Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:10:25.217Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-26T20:10:25.217Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:10:26.352Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-26T20:10:26.353Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-26T20:10:26.379Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-26T20:10:26.379Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-26T20:10:26.381Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-26T20:10:26.381Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-26T20:10:26.382Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-26T20:10:26.382Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-26T20:10:26.382Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig [none]
+[debug] [2023-12-26T20:10:26.716Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig 200
+[debug] [2023-12-26T20:10:26.716Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig {"projectId":"chatly-89d22","storageBucket":"chatly-89d22.appspot.com"}
+[debug] [2023-12-26T20:10:26.716Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs [none]
+[debug] [2023-12-26T20:10:27.531Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs 200
+[debug] [2023-12-26T20:10:27.531Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs {}
+[debug] [2023-12-26T20:10:27.532Z] Validating nodejs source
+[debug] [2023-12-26T20:10:28.790Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-12-26T20:10:28.791Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-26T20:10:28.792Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-26T20:10:28.806Z] Found firebase-functions binary at '/Volumes/work/motherbeing/chatly/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8504
+
+[debug] [2023-12-26T20:10:29.412Z] Got response from /__/functions.yaml {"endpoints":{"messagesListener":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.created","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"messages/{docId}"},"retry":false},"entryPoint":"messagesListener"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Volumes/work/motherbeing/chatly/functions (87.43 KB) for uploading 
+[debug] [2023-12-26T20:10:29.553Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions [none]
+[debug] [2023-12-26T20:10:30.276Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions 200
+[debug] [2023-12-26T20:10:30.276Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions {}
+[debug] [2023-12-26T20:10:30.278Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-12-26T20:10:31.415Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions 200
+[debug] [2023-12-26T20:10:31.415Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions {}
+[debug] [2023-12-26T20:10:31.416Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) [none]
+[debug] [2023-12-26T20:10:32.330Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) 200
+[debug] [2023-12-26T20:10:32.330Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) {"name":"projects/chatly-89d22/databases/(default)","uid":"9a3b8431-d76c-4166-b032-1b63057f98ff","createTime":"2023-12-26T11:37:58.440529Z","updateTime":"2023-12-26T11:37:58.440529Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2023-12-26T19:10:32.331093Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IJuRubL0rYMDMITaxrjurYMD"}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-12-26T20:10:32.332Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com [none]
+[debug] [2023-12-26T20:10:32.333Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:10:32.335Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com [none]
+[debug] [2023-12-26T20:10:32.335Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:10:32.337Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com [none]
+[debug] [2023-12-26T20:10:32.337Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:10:32.339Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com [none]
+[debug] [2023-12-26T20:10:32.339Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:10:33.330Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com 200
+[debug] [2023-12-26T20:10:33.330Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com [omitted]
+[info] ✔  functions: required API run.googleapis.com is enabled 
+[debug] [2023-12-26T20:10:33.330Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com 200
+[debug] [2023-12-26T20:10:33.330Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com [omitted]
+[info] ✔  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2023-12-26T20:10:33.333Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com 200
+[debug] [2023-12-26T20:10:33.333Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com [omitted]
+[info] ✔  functions: required API storage.googleapis.com is enabled 
+[debug] [2023-12-26T20:10:33.362Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com 200
+[debug] [2023-12-26T20:10:33.362Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com [omitted]
+[info] ✔  functions: required API eventarc.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-12-26T20:10:33.363Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-12-26T20:10:33.364Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-12-26T20:10:34.621Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-12-26T20:10:34.621Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-930897860276@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"101776600708896459087"}}
+[debug] [2023-12-26T20:10:34.712Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-12-26T20:10:34.712Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-930897860276@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"111130878048027908414"}}
+[debug] [2023-12-26T20:10:34.713Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy [none]
+[debug] [2023-12-26T20:10:35.619Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy 200
+[debug] [2023-12-26T20:10:35.620Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy {"version":1,"etag":"BwYNbs94JyM=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:930897860276@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.admin","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-930897860276@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-930897860276@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com","serviceAccount:chatly-89d22@appspot.gserviceaccount.com"]},{"role":"roles/eventarc.eventReceiver","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com"]},{"role":"roles/eventarc.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-eventarc.iam.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-930897860276@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-930897860276@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com","serviceAccount:service-930897860276@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:ahmed.a.kasem18@gmail.com"]},{"role":"roles/run.invoker","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-930897860276@serverless-robot-prod.iam.gserviceaccount.com"]}]}
+[debug] [2023-12-26T20:10:35.621Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 [none]
+[debug] [2023-12-26T20:10:35.975Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 200
+[debug] [2023-12-26T20:10:35.975Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 {"projectId":"chatly-89d22","projectNumber":"930897860276","displayName":"chatly","name":"projects/chatly-89d22","resources":{"hostingSite":"chatly-89d22"},"state":"ACTIVE","etag":"1_a2c10ac2-069e-4089-bda2-e705e6546bf1"}
+[debug] [2023-12-26T20:10:35.977Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-12-26T20:10:36.907Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-12-26T20:10:36.907Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/33243f6f-6811-4d6f-a4d4-417a94acf753.zip?GoogleAccessId=service-930897860276@gcf-admin-robot.iam.gserviceaccount.com&Expires=1703623236&Signature=AE1w%2BKF%2Bvqr3eABYHk48xyYaZfrE7y%2F%2Fv4X5HNSELQiBtJPPv7kuWS1gNaNpriDQLgz2uYjftggqe7NL2to%2BTStuEJD28s%2FBueMElgNqjYZ3eTfdcev59f2UnruVHOLJVmPvEFLh%2BZg4AAzkfzEDs0xu1FW7zXNsZNN47hr5Kzi4WFXO5gD55FZwTPOMbwIGhXEtYn2v0FZM50RECCDljKeh%2FQo5Crm69CAxBha5Gq1C2A9vdNTKcd4HaH9p4%2BxjfnCd5YPVVI5RgzuMTKCx9NAMSsLBm%2B25uZvNYDMJOCBJ6Kk4Wfye%2BNX4GrDDC5Iim5yyeFBUjVBL%2Buslqz6GTg%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-930897860276-us-central1","object":"33243f6f-6811-4d6f-a4d4-417a94acf753.zip"}}
+[debug] [2023-12-26T20:10:36.908Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/33243f6f-6811-4d6f-a4d4-417a94acf753.zip GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703623236&Signature=AE1w%2BKF%2Bvqr3eABYHk48xyYaZfrE7y%2F%2Fv4X5HNSELQiBtJPPv7kuWS1gNaNpriDQLgz2uYjftggqe7NL2to%2BTStuEJD28s%2FBueMElgNqjYZ3eTfdcev59f2UnruVHOLJVmPvEFLh%2BZg4AAzkfzEDs0xu1FW7zXNsZNN47hr5Kzi4WFXO5gD55FZwTPOMbwIGhXEtYn2v0FZM50RECCDljKeh%2FQo5Crm69CAxBha5Gq1C2A9vdNTKcd4HaH9p4%2BxjfnCd5YPVVI5RgzuMTKCx9NAMSsLBm%2B25uZvNYDMJOCBJ6Kk4Wfye%2BNX4GrDDC5Iim5yyeFBUjVBL%2Buslqz6GTg%3D%3D
+[debug] [2023-12-26T20:10:36.908Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/33243f6f-6811-4d6f-a4d4-417a94acf753.zip [stream]
+[debug] [2023-12-26T20:11:20.253Z] *** [apiv2] error from fetch(https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/33243f6f-6811-4d6f-a4d4-417a94acf753.zip?GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703623236&Signature=AE1w%2BKF%2Bvqr3eABYHk48xyYaZfrE7y%2F%2Fv4X5HNSELQiBtJPPv7kuWS1gNaNpriDQLgz2uYjftggqe7NL2to%2BTStuEJD28s%2FBueMElgNqjYZ3eTfdcev59f2UnruVHOLJVmPvEFLh%2BZg4AAzkfzEDs0xu1FW7zXNsZNN47hr5Kzi4WFXO5gD55FZwTPOMbwIGhXEtYn2v0FZM50RECCDljKeh%2FQo5Crm69CAxBha5Gq1C2A9vdNTKcd4HaH9p4%2BxjfnCd5YPVVI5RgzuMTKCx9NAMSsLBm%2B25uZvNYDMJOCBJ6Kk4Wfye%2BNX4GrDDC5Iim5yyeFBUjVBL%2Buslqz6GTg%3D%3D, {"headers":{},"method":"PUT","body":{"fd":null,"path":"/var/folders/00/kd4pdszd0x316dr_13gg5qgc0000gp/T/firebase-functions--75530-OnC3QsXz3dvU-.zip","flags":"r","mode":438,"end":null,"bytesRead":89530,"_readableState":{"objectMode":false,"highWaterMark":65536,"buffer":{"head":null,"tail":null,"length":0},"length":0,"pipes":[],"flowing":false,"ended":true,"endEmitted":true,"reading":false,"constructed":true,"sync":false,"needReadable":false,"emittedReadable":false,"readableListening":false,"resumeScheduled":false,"errorEmitted":false,"emitClose":true,"autoDestroy":true,"destroyed":true,"errored":null,"closed":true,"closeEmitted":true,"defaultEncoding":"utf8","awaitDrainWriters":null,"multiAwaitDrain":false,"readingMore":false,"dataEmitted":true,"decoder":null,"encoding":null},"_events":{},"_eventsCount":1}}): FetchError: request to https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/33243f6f-6811-4d6f-a4d4-417a94acf753.zip?GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703623236&Signature=AE1w%2BKF%2Bvqr3eABYHk48xyYaZfrE7y%2F%2Fv4X5HNSELQiBtJPPv7kuWS1gNaNpriDQLgz2uYjftggqe7NL2to%2BTStuEJD28s%2FBueMElgNqjYZ3eTfdcev59f2UnruVHOLJVmPvEFLh%2BZg4AAzkfzEDs0xu1FW7zXNsZNN47hr5Kzi4WFXO5gD55FZwTPOMbwIGhXEtYn2v0FZM50RECCDljKeh%2FQo5Crm69CAxBha5Gq1C2A9vdNTKcd4HaH9p4%2BxjfnCd5YPVVI5RgzuMTKCx9NAMSsLBm%2B25uZvNYDMJOCBJ6Kk4Wfye%2BNX4GrDDC5Iim5yyeFBUjVBL%2Buslqz6GTg%3D%3D failed, reason: read ETIMEDOUT
+[warn] ⚠  functions: Upload Error: Failed to make request to https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/33243f6f-6811-4d6f-a4d4-417a94acf753.zip?GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703623236&Signature=AE1w%2BKF%2Bvqr3eABYHk48xyYaZfrE7y%2F%2Fv4X5HNSELQiBtJPPv7kuWS1gNaNpriDQLgz2uYjftggqe7NL2to%2BTStuEJD28s%2FBueMElgNqjYZ3eTfdcev59f2UnruVHOLJVmPvEFLh%2BZg4AAzkfzEDs0xu1FW7zXNsZNN47hr5Kzi4WFXO5gD55FZwTPOMbwIGhXEtYn2v0FZM50RECCDljKeh%2FQo5Crm69CAxBha5Gq1C2A9vdNTKcd4HaH9p4%2BxjfnCd5YPVVI5RgzuMTKCx9NAMSsLBm%2B25uZvNYDMJOCBJ6Kk4Wfye%2BNX4GrDDC5Iim5yyeFBUjVBL%2Buslqz6GTg%3D%3D 
+[debug] [2023-12-26T20:11:20.441Z] FetchError: request to https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/33243f6f-6811-4d6f-a4d4-417a94acf753.zip?GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703623236&Signature=AE1w%2BKF%2Bvqr3eABYHk48xyYaZfrE7y%2F%2Fv4X5HNSELQiBtJPPv7kuWS1gNaNpriDQLgz2uYjftggqe7NL2to%2BTStuEJD28s%2FBueMElgNqjYZ3eTfdcev59f2UnruVHOLJVmPvEFLh%2BZg4AAzkfzEDs0xu1FW7zXNsZNN47hr5Kzi4WFXO5gD55FZwTPOMbwIGhXEtYn2v0FZM50RECCDljKeh%2FQo5Crm69CAxBha5Gq1C2A9vdNTKcd4HaH9p4%2BxjfnCd5YPVVI5RgzuMTKCx9NAMSsLBm%2B25uZvNYDMJOCBJ6Kk4Wfye%2BNX4GrDDC5Iim5yyeFBUjVBL%2Buslqz6GTg%3D%3D failed, reason: read ETIMEDOUT
+    at ClientRequest.<anonymous> (/Users/macbookpro/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/node-fetch/lib/index.js:1501:11)
+    at ClientRequest.emit (node:events:514:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at TLSSocket.socketErrorListener (node:_http_client:501:9)
+    at TLSSocket.emit (node:events:514:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: Failed to make request to https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/33243f6f-6811-4d6f-a4d4-417a94acf753.zip?GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703623236&Signature=AE1w%2BKF%2Bvqr3eABYHk48xyYaZfrE7y%2F%2Fv4X5HNSELQiBtJPPv7kuWS1gNaNpriDQLgz2uYjftggqe7NL2to%2BTStuEJD28s%2FBueMElgNqjYZ3eTfdcev59f2UnruVHOLJVmPvEFLh%2BZg4AAzkfzEDs0xu1FW7zXNsZNN47hr5Kzi4WFXO5gD55FZwTPOMbwIGhXEtYn2v0FZM50RECCDljKeh%2FQo5Crm69CAxBha5Gq1C2A9vdNTKcd4HaH9p4%2BxjfnCd5YPVVI5RgzuMTKCx9NAMSsLBm%2B25uZvNYDMJOCBJ6Kk4Wfye%2BNX4GrDDC5Iim5yyeFBUjVBL%2Buslqz6GTg%3D%3D
+[debug] [2023-12-26T20:51:32.053Z] ----------------------------------------------------------------------
+[debug] [2023-12-26T20:51:32.055Z] Command:       /Users/macbookpro/.nvm/versions/node/v18.17.0/bin/node /Users/macbookpro/.nvm/versions/node/v16.17.0/bin/firebase deploy --debug --only functions
+[debug] [2023-12-26T20:51:32.056Z] CLI Version:   13.0.2
+[debug] [2023-12-26T20:51:32.056Z] Platform:      darwin
+[debug] [2023-12-26T20:51:32.056Z] Node Version:  v18.17.0
+[debug] [2023-12-26T20:51:32.058Z] Time:          Tue Dec 26 2023 22:51:32 GMT+0200 (Eastern European Standard Time)
+[debug] [2023-12-26T20:51:32.058Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-26T20:51:32.132Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-26T20:51:32.134Z] > authorizing via signed-in user (ahmed.a.kasem18@gmail.com)
+[debug] [2023-12-26T20:51:32.134Z] [iam] checking project chatly-89d22 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-26T20:51:32.136Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions [none]
+[debug] [2023-12-26T20:51:32.136Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:51:32.137Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-26T20:51:33.043Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions 200
+[debug] [2023-12-26T20:51:33.043Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-26T20:51:33.044Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-26T20:51:33.044Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-26T20:51:33.933Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-26T20:51:33.933Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'chatly-89d22'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2023-12-26T20:51:47.854Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 [none]
+[debug] [2023-12-26T20:51:48.241Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 200
+[debug] [2023-12-26T20:51:48.241Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 {"projectId":"chatly-89d22","projectNumber":"930897860276","displayName":"chatly","name":"projects/chatly-89d22","resources":{"hostingSite":"chatly-89d22"},"state":"ACTIVE","etag":"1_a2c10ac2-069e-4089-bda2-e705e6546bf1"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-26T20:51:48.243Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-26T20:51:48.243Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:51:48.245Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-26T20:51:48.245Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:51:48.246Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-26T20:51:48.246Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:51:48.248Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-26T20:51:48.248Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:51:49.282Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-26T20:51:49.282Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-26T20:51:49.287Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-26T20:51:49.287Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-26T20:51:49.288Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-26T20:51:49.288Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-26T20:51:49.305Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-26T20:51:49.305Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-26T20:51:49.305Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig [none]
+[debug] [2023-12-26T20:51:49.638Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig 200
+[debug] [2023-12-26T20:51:49.638Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig {"projectId":"chatly-89d22","storageBucket":"chatly-89d22.appspot.com"}
+[debug] [2023-12-26T20:51:49.639Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs [none]
+[debug] [2023-12-26T20:51:50.028Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs 200
+[debug] [2023-12-26T20:51:50.029Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs {}
+[debug] [2023-12-26T20:51:50.030Z] Validating nodejs source
+[debug] [2023-12-26T20:51:50.985Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-12-26T20:51:50.986Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-26T20:51:50.987Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-26T20:51:50.996Z] Found firebase-functions binary at '/Volumes/work/motherbeing/chatly/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8185
+
+[debug] [2023-12-26T20:51:51.333Z] Got response from /__/functions.yaml {"endpoints":{"messagesListener":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.created","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"messages/{docId}"},"retry":false},"entryPoint":"messagesListener"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Volumes/work/motherbeing/chatly/functions (87.43 KB) for uploading 
+[debug] [2023-12-26T20:51:51.432Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions [none]
+[debug] [2023-12-26T20:51:52.151Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions 200
+[debug] [2023-12-26T20:51:52.151Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions {}
+[debug] [2023-12-26T20:51:52.152Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-12-26T20:51:53.275Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions 200
+[debug] [2023-12-26T20:51:53.276Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions {}
+[debug] [2023-12-26T20:51:53.276Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) [none]
+[debug] [2023-12-26T20:51:54.208Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) 200
+[debug] [2023-12-26T20:51:54.208Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) {"name":"projects/chatly-89d22/databases/(default)","uid":"9a3b8431-d76c-4166-b032-1b63057f98ff","createTime":"2023-12-26T11:37:58.440529Z","updateTime":"2023-12-26T11:37:58.440529Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2023-12-26T19:51:54.253767Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IOrV9dH9rYMDMITaxrjurYMD"}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-12-26T20:51:54.210Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com [none]
+[debug] [2023-12-26T20:51:54.210Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:51:54.212Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com [none]
+[debug] [2023-12-26T20:51:54.212Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:51:54.214Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com [none]
+[debug] [2023-12-26T20:51:54.214Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:51:54.216Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com [none]
+[debug] [2023-12-26T20:51:54.216Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T20:51:55.206Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com 200
+[debug] [2023-12-26T20:51:55.206Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com [omitted]
+[info] ✔  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-12-26T20:51:55.213Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com 200
+[debug] [2023-12-26T20:51:55.214Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com [omitted]
+[info] ✔  functions: required API run.googleapis.com is enabled 
+[debug] [2023-12-26T20:51:55.215Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com 200
+[debug] [2023-12-26T20:51:55.216Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com [omitted]
+[info] ✔  functions: required API storage.googleapis.com is enabled 
+[debug] [2023-12-26T20:51:55.262Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com 200
+[debug] [2023-12-26T20:51:55.262Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com [omitted]
+[info] ✔  functions: required API pubsub.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-12-26T20:51:55.263Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-12-26T20:51:55.265Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-12-26T20:51:56.344Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-12-26T20:51:56.345Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-930897860276@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"101776600708896459087"}}
+[debug] [2023-12-26T20:51:56.409Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-12-26T20:51:56.409Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-930897860276@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"111130878048027908414"}}
+[debug] [2023-12-26T20:51:56.411Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy [none]
+[debug] [2023-12-26T20:51:57.270Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy 200
+[debug] [2023-12-26T20:51:57.270Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy {"version":1,"etag":"BwYNbs94JyM=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:930897860276@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.admin","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-930897860276@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-930897860276@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com","serviceAccount:chatly-89d22@appspot.gserviceaccount.com"]},{"role":"roles/eventarc.eventReceiver","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com"]},{"role":"roles/eventarc.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-eventarc.iam.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-930897860276@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-930897860276@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com","serviceAccount:service-930897860276@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:ahmed.a.kasem18@gmail.com"]},{"role":"roles/run.invoker","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-930897860276@serverless-robot-prod.iam.gserviceaccount.com"]}]}
+[debug] [2023-12-26T20:51:57.272Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 [none]
+[debug] [2023-12-26T20:51:57.631Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 200
+[debug] [2023-12-26T20:51:57.631Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 {"projectId":"chatly-89d22","projectNumber":"930897860276","displayName":"chatly","name":"projects/chatly-89d22","resources":{"hostingSite":"chatly-89d22"},"state":"ACTIVE","etag":"1_a2c10ac2-069e-4089-bda2-e705e6546bf1"}
+[debug] [2023-12-26T20:51:57.633Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-12-26T20:51:58.574Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-12-26T20:51:58.574Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/abdb2c3e-beb2-4aa6-b5bb-dc24d5d47f7d.zip?GoogleAccessId=service-930897860276@gcf-admin-robot.iam.gserviceaccount.com&Expires=1703625718&Signature=JbGagUxdonItc%2F2w74JYJmNT4QPSGn6sDGY%2BxrIY7%2FeCBJNvdvtpv%2FRWAtHL5lKXIbLeIDeYC3O3ohT%2Fj73uH40PqIVwBwUP4p%2BVZpR4H62GmfNhcIOjVFtLN93bJQFzK1sjSkD7hec%2BLARVkhgGUbzP%2B0tjRSEC%2Fli1Hop2ceZWUddlZKY%2BfSHqpglmg6gz3CFjZQ6FY%2FETeWk9fggkbKiJ2hbS4SUyTCVTb32ROsiMKQAxwNADmL0VFD3ADaLHuOeq07O4ZW0ZcLw7tD1x8cHNil7cUuVpEec7LQes130R5Ty5LGpd6KEbRpD7YNe1qYuItGlBSe7u2SIIR5NjCw%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-930897860276-us-central1","object":"abdb2c3e-beb2-4aa6-b5bb-dc24d5d47f7d.zip"}}
+[debug] [2023-12-26T20:51:58.575Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/abdb2c3e-beb2-4aa6-b5bb-dc24d5d47f7d.zip GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703625718&Signature=JbGagUxdonItc%2F2w74JYJmNT4QPSGn6sDGY%2BxrIY7%2FeCBJNvdvtpv%2FRWAtHL5lKXIbLeIDeYC3O3ohT%2Fj73uH40PqIVwBwUP4p%2BVZpR4H62GmfNhcIOjVFtLN93bJQFzK1sjSkD7hec%2BLARVkhgGUbzP%2B0tjRSEC%2Fli1Hop2ceZWUddlZKY%2BfSHqpglmg6gz3CFjZQ6FY%2FETeWk9fggkbKiJ2hbS4SUyTCVTb32ROsiMKQAxwNADmL0VFD3ADaLHuOeq07O4ZW0ZcLw7tD1x8cHNil7cUuVpEec7LQes130R5Ty5LGpd6KEbRpD7YNe1qYuItGlBSe7u2SIIR5NjCw%3D%3D
+[debug] [2023-12-26T20:51:58.575Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/abdb2c3e-beb2-4aa6-b5bb-dc24d5d47f7d.zip [stream]
+[debug] [2023-12-26T20:52:35.266Z] *** [apiv2] error from fetch(https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/abdb2c3e-beb2-4aa6-b5bb-dc24d5d47f7d.zip?GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703625718&Signature=JbGagUxdonItc%2F2w74JYJmNT4QPSGn6sDGY%2BxrIY7%2FeCBJNvdvtpv%2FRWAtHL5lKXIbLeIDeYC3O3ohT%2Fj73uH40PqIVwBwUP4p%2BVZpR4H62GmfNhcIOjVFtLN93bJQFzK1sjSkD7hec%2BLARVkhgGUbzP%2B0tjRSEC%2Fli1Hop2ceZWUddlZKY%2BfSHqpglmg6gz3CFjZQ6FY%2FETeWk9fggkbKiJ2hbS4SUyTCVTb32ROsiMKQAxwNADmL0VFD3ADaLHuOeq07O4ZW0ZcLw7tD1x8cHNil7cUuVpEec7LQes130R5Ty5LGpd6KEbRpD7YNe1qYuItGlBSe7u2SIIR5NjCw%3D%3D, {"headers":{},"method":"PUT","body":{"fd":null,"path":"/var/folders/00/kd4pdszd0x316dr_13gg5qgc0000gp/T/firebase-functions--80962-T9ddS6b6Z6hj-.zip","flags":"r","mode":438,"end":null,"bytesRead":89530,"_readableState":{"objectMode":false,"highWaterMark":65536,"buffer":{"head":null,"tail":null,"length":0},"length":0,"pipes":[],"flowing":false,"ended":true,"endEmitted":true,"reading":false,"constructed":true,"sync":false,"needReadable":false,"emittedReadable":false,"readableListening":false,"resumeScheduled":false,"errorEmitted":false,"emitClose":true,"autoDestroy":true,"destroyed":true,"errored":null,"closed":true,"closeEmitted":true,"defaultEncoding":"utf8","awaitDrainWriters":null,"multiAwaitDrain":false,"readingMore":false,"dataEmitted":true,"decoder":null,"encoding":null},"_events":{},"_eventsCount":1}}): FetchError: request to https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/abdb2c3e-beb2-4aa6-b5bb-dc24d5d47f7d.zip?GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703625718&Signature=JbGagUxdonItc%2F2w74JYJmNT4QPSGn6sDGY%2BxrIY7%2FeCBJNvdvtpv%2FRWAtHL5lKXIbLeIDeYC3O3ohT%2Fj73uH40PqIVwBwUP4p%2BVZpR4H62GmfNhcIOjVFtLN93bJQFzK1sjSkD7hec%2BLARVkhgGUbzP%2B0tjRSEC%2Fli1Hop2ceZWUddlZKY%2BfSHqpglmg6gz3CFjZQ6FY%2FETeWk9fggkbKiJ2hbS4SUyTCVTb32ROsiMKQAxwNADmL0VFD3ADaLHuOeq07O4ZW0ZcLw7tD1x8cHNil7cUuVpEec7LQes130R5Ty5LGpd6KEbRpD7YNe1qYuItGlBSe7u2SIIR5NjCw%3D%3D failed, reason: read ETIMEDOUT
+[warn] ⚠  functions: Upload Error: Failed to make request to https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/abdb2c3e-beb2-4aa6-b5bb-dc24d5d47f7d.zip?GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703625718&Signature=JbGagUxdonItc%2F2w74JYJmNT4QPSGn6sDGY%2BxrIY7%2FeCBJNvdvtpv%2FRWAtHL5lKXIbLeIDeYC3O3ohT%2Fj73uH40PqIVwBwUP4p%2BVZpR4H62GmfNhcIOjVFtLN93bJQFzK1sjSkD7hec%2BLARVkhgGUbzP%2B0tjRSEC%2Fli1Hop2ceZWUddlZKY%2BfSHqpglmg6gz3CFjZQ6FY%2FETeWk9fggkbKiJ2hbS4SUyTCVTb32ROsiMKQAxwNADmL0VFD3ADaLHuOeq07O4ZW0ZcLw7tD1x8cHNil7cUuVpEec7LQes130R5Ty5LGpd6KEbRpD7YNe1qYuItGlBSe7u2SIIR5NjCw%3D%3D 
+[debug] [2023-12-26T20:52:35.464Z] FetchError: request to https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/abdb2c3e-beb2-4aa6-b5bb-dc24d5d47f7d.zip?GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703625718&Signature=JbGagUxdonItc%2F2w74JYJmNT4QPSGn6sDGY%2BxrIY7%2FeCBJNvdvtpv%2FRWAtHL5lKXIbLeIDeYC3O3ohT%2Fj73uH40PqIVwBwUP4p%2BVZpR4H62GmfNhcIOjVFtLN93bJQFzK1sjSkD7hec%2BLARVkhgGUbzP%2B0tjRSEC%2Fli1Hop2ceZWUddlZKY%2BfSHqpglmg6gz3CFjZQ6FY%2FETeWk9fggkbKiJ2hbS4SUyTCVTb32ROsiMKQAxwNADmL0VFD3ADaLHuOeq07O4ZW0ZcLw7tD1x8cHNil7cUuVpEec7LQes130R5Ty5LGpd6KEbRpD7YNe1qYuItGlBSe7u2SIIR5NjCw%3D%3D failed, reason: read ETIMEDOUT
+    at ClientRequest.<anonymous> (/Users/macbookpro/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/node_modules/node-fetch/lib/index.js:1501:11)
+    at ClientRequest.emit (node:events:514:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at TLSSocket.socketErrorListener (node:_http_client:501:9)
+    at TLSSocket.emit (node:events:514:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: Failed to make request to https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/abdb2c3e-beb2-4aa6-b5bb-dc24d5d47f7d.zip?GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703625718&Signature=JbGagUxdonItc%2F2w74JYJmNT4QPSGn6sDGY%2BxrIY7%2FeCBJNvdvtpv%2FRWAtHL5lKXIbLeIDeYC3O3ohT%2Fj73uH40PqIVwBwUP4p%2BVZpR4H62GmfNhcIOjVFtLN93bJQFzK1sjSkD7hec%2BLARVkhgGUbzP%2B0tjRSEC%2Fli1Hop2ceZWUddlZKY%2BfSHqpglmg6gz3CFjZQ6FY%2FETeWk9fggkbKiJ2hbS4SUyTCVTb32ROsiMKQAxwNADmL0VFD3ADaLHuOeq07O4ZW0ZcLw7tD1x8cHNil7cUuVpEec7LQes130R5Ty5LGpd6KEbRpD7YNe1qYuItGlBSe7u2SIIR5NjCw%3D%3D
+[debug] [2023-12-26T21:01:05.195Z] ----------------------------------------------------------------------
+[debug] [2023-12-26T21:01:05.197Z] Command:       /Users/macbookpro/.nvm/versions/node/v18.17.0/bin/node /Users/macbookpro/.nvm/versions/node/v16.17.0/bin/firebase deploy --debug --only functions
+[debug] [2023-12-26T21:01:05.198Z] CLI Version:   13.0.2
+[debug] [2023-12-26T21:01:05.198Z] Platform:      darwin
+[debug] [2023-12-26T21:01:05.198Z] Node Version:  v18.17.0
+[debug] [2023-12-26T21:01:05.263Z] Time:          Tue Dec 26 2023 23:01:05 GMT+0200 (Eastern European Standard Time)
+[debug] [2023-12-26T21:01:05.263Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-26T21:01:05.376Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-26T21:01:05.377Z] > authorizing via signed-in user (ahmed.a.kasem18@gmail.com)
+[debug] [2023-12-26T21:01:05.378Z] [iam] checking project chatly-89d22 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-26T21:01:05.379Z] > refreshing access token with scopes: []
+[debug] [2023-12-26T21:01:05.381Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-26T21:01:05.382Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-26T21:01:05.714Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-26T21:01:05.715Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-26T21:01:05.775Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions [none]
+[debug] [2023-12-26T21:01:05.776Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T21:01:05.776Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-26T21:01:06.666Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions 200
+[debug] [2023-12-26T21:01:06.666Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-26T21:01:06.666Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-26T21:01:06.666Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-26T21:01:07.565Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-26T21:01:07.566Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'chatly-89d22'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2023-12-26T21:01:21.895Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 [none]
+[debug] [2023-12-26T21:01:22.281Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 200
+[debug] [2023-12-26T21:01:22.281Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 {"projectId":"chatly-89d22","projectNumber":"930897860276","displayName":"chatly","name":"projects/chatly-89d22","resources":{"hostingSite":"chatly-89d22","storageBucket":"chatly-89d22.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_7a0e891e-f090-4fb3-aad2-afdacabc61f6"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-26T21:01:22.283Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-26T21:01:22.283Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T21:01:22.284Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-26T21:01:22.284Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T21:01:22.286Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-26T21:01:22.286Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T21:01:22.287Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-26T21:01:22.288Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T21:01:23.372Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-26T21:01:23.373Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-26T21:01:23.388Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-26T21:01:23.388Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-26T21:01:23.388Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-26T21:01:23.388Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-26T21:01:23.390Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-26T21:01:23.390Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-26T21:01:23.391Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig [none]
+[debug] [2023-12-26T21:01:24.060Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig 200
+[debug] [2023-12-26T21:01:24.060Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig {"projectId":"chatly-89d22","storageBucket":"chatly-89d22.appspot.com","locationId":"us-central"}
+[debug] [2023-12-26T21:01:24.060Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs [none]
+[debug] [2023-12-26T21:01:24.508Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs 200
+[debug] [2023-12-26T21:01:24.508Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs {}
+[debug] [2023-12-26T21:01:24.510Z] Validating nodejs source
+[debug] [2023-12-26T21:01:25.615Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-12-26T21:01:25.616Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-26T21:01:25.617Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-26T21:01:25.633Z] Found firebase-functions binary at '/Volumes/work/motherbeing/chatly/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8498
+
+[debug] [2023-12-26T21:01:26.042Z] Got response from /__/functions.yaml {"endpoints":{"messagesListener":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.created","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"messages/{docId}"},"retry":false},"entryPoint":"messagesListener"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Volumes/work/motherbeing/chatly/functions (87.43 KB) for uploading 
+[debug] [2023-12-26T21:01:26.153Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions [none]
+[debug] [2023-12-26T21:01:26.851Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions 200
+[debug] [2023-12-26T21:01:26.852Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions {}
+[debug] [2023-12-26T21:01:26.853Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-12-26T21:01:27.990Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions 200
+[debug] [2023-12-26T21:01:27.990Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions {}
+[debug] [2023-12-26T21:01:27.992Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) [none]
+[debug] [2023-12-26T21:01:28.990Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) 200
+[debug] [2023-12-26T21:01:28.990Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) {"name":"projects/chatly-89d22/databases/(default)","uid":"9a3b8431-d76c-4166-b032-1b63057f98ff","createTime":"2023-12-26T11:37:58.440529Z","updateTime":"2023-12-26T11:37:58.440529Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2023-12-26T20:01:29.041176Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"ILj1/+P/rYMDMITaxrjurYMD"}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-12-26T21:01:28.993Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com [none]
+[debug] [2023-12-26T21:01:28.994Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T21:01:28.995Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com [none]
+[debug] [2023-12-26T21:01:28.996Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T21:01:28.998Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com [none]
+[debug] [2023-12-26T21:01:28.998Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T21:01:29.000Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com [none]
+[debug] [2023-12-26T21:01:29.001Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-26T21:01:29.970Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com 200
+[debug] [2023-12-26T21:01:29.970Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com [omitted]
+[info] ✔  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2023-12-26T21:01:29.974Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com 200
+[debug] [2023-12-26T21:01:29.975Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com [omitted]
+[info] ✔  functions: required API storage.googleapis.com is enabled 
+[debug] [2023-12-26T21:01:30.003Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com 200
+[debug] [2023-12-26T21:01:30.003Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com [omitted]
+[info] ✔  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-12-26T21:01:30.005Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com 200
+[debug] [2023-12-26T21:01:30.005Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com [omitted]
+[info] ✔  functions: required API run.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-12-26T21:01:30.006Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-12-26T21:01:30.008Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-12-26T21:01:31.117Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-12-26T21:01:31.118Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-930897860276@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"111130878048027908414"}}
+[debug] [2023-12-26T21:01:31.160Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-12-26T21:01:31.160Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-930897860276@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"101776600708896459087"}}
+[debug] [2023-12-26T21:01:31.162Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy [none]
+[debug] [2023-12-26T21:01:32.087Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy 200
+[debug] [2023-12-26T21:01:32.087Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy {"version":1,"etag":"BwYNb/nRAVk=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:930897860276@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.admin","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-930897860276@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-930897860276@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com","serviceAccount:chatly-89d22@appspot.gserviceaccount.com"]},{"role":"roles/eventarc.eventReceiver","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com"]},{"role":"roles/eventarc.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-eventarc.iam.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-930897860276@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-930897860276@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com","serviceAccount:service-930897860276@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:ahmed.a.kasem18@gmail.com"]},{"role":"roles/run.invoker","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-930897860276@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]}]}
+[debug] [2023-12-26T21:01:32.089Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 [none]
+[debug] [2023-12-26T21:01:32.429Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 200
+[debug] [2023-12-26T21:01:32.429Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 {"projectId":"chatly-89d22","projectNumber":"930897860276","displayName":"chatly","name":"projects/chatly-89d22","resources":{"hostingSite":"chatly-89d22","storageBucket":"chatly-89d22.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_7a0e891e-f090-4fb3-aad2-afdacabc61f6"}
+[debug] [2023-12-26T21:01:32.431Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-12-26T21:01:33.374Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-12-26T21:01:33.374Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/a341c316-999b-4cf5-bc3d-df1312de2401.zip?GoogleAccessId=service-930897860276@gcf-admin-robot.iam.gserviceaccount.com&Expires=1703626293&Signature=ZpE2s6I2bxb5%2F%2Bk126ZYSpH4A1hWm12IXBca49UW2rScrrtaFSQ3Hgw2uJ09jvKUrNfFvOBwquxFqJ%2BvRyqL35JPHSqy%2FPAvNO9SiVjTbGsyUCh43fOf3VF%2BoKNSdmMkLJh%2BvR3ICmek5FXk0EHuJeZB8qVZ3fmVVSxO5%2FJ1o7MUv3Vt60oVE0TTrx47m09ggrFag43vLydaL9ZGgVPRNKjUxGphtUF%2FPJY0RvYIC9ceSFJXbEhRRun6TgZYSipvKJGJ5AHMyrNzn6rb5EED44wPT0WSJaf16rK44pzLm2GmHt5kqYsCk1o%2FSBSDAPJ%2F9XZuv%2FWwEB7rNwyoXmdvMg%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-930897860276-us-central1","object":"a341c316-999b-4cf5-bc3d-df1312de2401.zip"}}
+[debug] [2023-12-26T21:01:33.376Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/a341c316-999b-4cf5-bc3d-df1312de2401.zip GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703626293&Signature=ZpE2s6I2bxb5%2F%2Bk126ZYSpH4A1hWm12IXBca49UW2rScrrtaFSQ3Hgw2uJ09jvKUrNfFvOBwquxFqJ%2BvRyqL35JPHSqy%2FPAvNO9SiVjTbGsyUCh43fOf3VF%2BoKNSdmMkLJh%2BvR3ICmek5FXk0EHuJeZB8qVZ3fmVVSxO5%2FJ1o7MUv3Vt60oVE0TTrx47m09ggrFag43vLydaL9ZGgVPRNKjUxGphtUF%2FPJY0RvYIC9ceSFJXbEhRRun6TgZYSipvKJGJ5AHMyrNzn6rb5EED44wPT0WSJaf16rK44pzLm2GmHt5kqYsCk1o%2FSBSDAPJ%2F9XZuv%2FWwEB7rNwyoXmdvMg%3D%3D
+[debug] [2023-12-26T21:01:33.376Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/a341c316-999b-4cf5-bc3d-df1312de2401.zip [stream]
+[debug] [2023-12-26T21:01:34.674Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/a341c316-999b-4cf5-bc3d-df1312de2401.zip 200
+[debug] [2023-12-26T21:01:34.674Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/a341c316-999b-4cf5-bc3d-df1312de2401.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 18 (2nd Gen) function messagesListener(us-central1)... 
+[debug] [2023-12-26T21:01:34.679Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions functionId=messagesListener
+[debug] [2023-12-26T21:01:34.679Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions {"name":"projects/chatly-89d22/locations/us-central1/functions/messagesListener","buildConfig":{"runtime":"nodejs18","entryPoint":"messagesListener","source":{"storageSource":{"bucket":"gcf-v2-uploads-930897860276-us-central1","object":"a341c316-999b-4cf5-bc3d-df1312de2401.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatly-89d22\",\"storageBucket\":\"chatly-89d22.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"chatly-89d22","EVENTARC_CLOUD_EVENT_SOURCE":"projects/chatly-89d22/locations/us-central1/services/messagesListener","FUNCTION_SIGNATURE_TYPE":"cloudevent","FUNCTION_TARGET":"messagesListener"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"f7df9a87675d2bd52c57af7b6fefe1df2ac3a009"},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.created","retryPolicy":"RETRY_POLICY_DO_NOT_RETRY","eventFilters":[{"attribute":"database","value":"(default)"},{"attribute":"namespace","value":"(default)"},{"attribute":"document","value":"messages/{docId}","operator":"match-path-pattern"}],"triggerRegion":"nam5"}}
+[debug] [2023-12-26T21:01:36.496Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions 400
+[debug] [2023-12-26T21:01:36.496Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions {"error":{"code":400,"message":"Could not create Cloud Run service messageslistener. spec.template.spec.containers.resources.limits.cpu: Invalid value specified for cpu. For the specified value, maxScale may not exceed 10.\nConsider running your workload in a region with greater capacity, decreasing your requested cpu-per-instance, or requesting an increase in quota for this region if you are seeing sustained usage near this limit, see https://cloud.google.com/run/quotas. Your project may gain access to further scaling by adding billing information to your account.","status":"INVALID_ARGUMENT"}}
+[warn] ⚠  functions: Your current project quotas don't allow for the current max instances setting of 100. Either reduce this function's maximum instances, or request a quota increase on the underlying Cloud Run service at https://cloud.google.com/run/quotas. 
+[warn] ⚠  functions: You can adjust the max instances value in your function's runtime options:
+	setGlobalOptions({maxInstances: 10}) 
+[error] Failed to create function projects/chatly-89d22/locations/us-central1/functions/messagesListener
+[debug] [2023-12-26T21:01:36.504Z] Total Function Deployment time: 1822
+[debug] [2023-12-26T21:01:36.504Z] 1 Functions Deployed
+[debug] [2023-12-26T21:01:36.504Z] 1 Functions Errored
+[debug] [2023-12-26T21:01:36.504Z] 0 Function Deployments Aborted
+[debug] [2023-12-26T21:01:36.504Z] Average Function Deployment time: 1821
+[info] 
+[info] Functions deploy had errors with the following functions:
+	messagesListener(us-central1)
+[info] i  functions: cleaning up build files... 
+[debug] [2023-12-26T21:01:36.718Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/chatly-89d22/locations/us-central1/repositories/gcf-artifacts/packages/messages_listener [none]
+[debug] [2023-12-26T21:01:36.720Z] >>> [apiv2][query] GET https://us.gcr.io/v2/chatly-89d22/gcf/us-central1/tags/list [none]
+[debug] [2023-12-26T21:01:37.082Z] <<< [apiv2][status] GET https://us.gcr.io/v2/chatly-89d22/gcf/us-central1/tags/list 200
+[debug] [2023-12-26T21:01:37.083Z] <<< [apiv2][body] GET https://us.gcr.io/v2/chatly-89d22/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"chatly-89d22/gcf/us-central1","tags":[]}
+[debug] [2023-12-26T21:01:37.084Z] Could not find image for function projects/chatly-89d22/locations/us-central1/functions/messagesListener
+[debug] [2023-12-26T21:01:37.619Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/chatly-89d22/locations/us-central1/repositories/gcf-artifacts/packages/messages_listener 404
+[debug] [2023-12-26T21:01:37.620Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/chatly-89d22/locations/us-central1/repositories/gcf-artifacts/packages/messages_listener {"error":{"code":404,"message":"Package \"projects/chatly-89d22/locations/us-central1/repositories/gcf-artifacts/packages/messages_listener\" was not found.","status":"NOT_FOUND"}}
+[debug] [2023-12-26T21:01:37.620Z] Functions deploy failed.
+[debug] [2023-12-26T21:01:37.620Z] {
+  "endpoint": {
+    "id": "messagesListener",
+    "project": "chatly-89d22",
+    "region": "us-central1",
+    "entryPoint": "messagesListener",
+    "platform": "gcfv2",
+    "runtime": "nodejs18",
+    "eventTrigger": {
+      "eventType": "google.cloud.firestore.document.v1.created",
+      "retry": false,
+      "eventFilters": {
+        "database": "(default)",
+        "namespace": "(default)"
+      },
+      "eventFilterPathPatterns": {
+        "document": "messages/{docId}"
+      },
+      "region": "nam5"
+    },
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"chatly-89d22\",\"storageBucket\":\"chatly-89d22.appspot.com\",\"locationId\":\"us-central\"}",
+      "GCLOUD_PROJECT": "chatly-89d22",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/chatly-89d22/locations/us-central1/services/messagesListener"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "f7df9a87675d2bd52c57af7b6fefe1df2ac3a009"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/chatly-89d22/locations/us-central1/functions/messagesListener"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/chatly-89d22/locations/us-central1/functions/messagesListener",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "Could not create Cloud Run service messageslistener. spec.template.spec.containers.resources.limits.cpu: Invalid value specified for cpu. For the specified value, maxScale may not exceed 10.\nConsider running your workload in a region with greater capacity, decreasing your requested cpu-per-instance, or requesting an increase in quota for this region if you are seeing sustained usage near this limit, see https://cloud.google.com/run/quotas. Your project may gain access to further scaling by adding billing information to your account.",
+            "status": "INVALID_ARGUMENT"
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 400, Could not create Cloud Run service messageslistener. spec.template.spec.containers.resources.limits.cpu: Invalid value specified for cpu. For the specified value, maxScale may not exceed 10.\nConsider running your workload in a region with greater capacity, decreasing your requested cpu-per-instance, or requesting an increase in quota for this region if you are seeing sustained usage near this limit, see https://cloud.google.com/run/quotas. Your project may gain access to further scaling by adding billing information to your account.",
+      "status": 400
+    },
+    "status": 400,
+    "code": 400
+  }
+}
+[debug] [2023-12-26T21:01:37.799Z] Error: Failed to create function messagesListener in region us-central1
+    at /Users/macbookpro/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:291:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.createV2Function (/Users/macbookpro/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:277:30)
+    at async Fabricator.createEndpoint (/Users/macbookpro/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:136:13)
+    at async handle (/Users/macbookpro/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2023-12-27T17:06:33.968Z] ----------------------------------------------------------------------
+[debug] [2023-12-27T17:06:33.970Z] Command:       /Users/macbookpro/.nvm/versions/node/v18.17.0/bin/node /Users/macbookpro/.nvm/versions/node/v16.17.0/bin/firebase deploy --debug --only functions
+[debug] [2023-12-27T17:06:33.971Z] CLI Version:   13.0.2
+[debug] [2023-12-27T17:06:33.971Z] Platform:      darwin
+[debug] [2023-12-27T17:06:33.971Z] Node Version:  v18.17.0
+[debug] [2023-12-27T17:06:33.972Z] Time:          Wed Dec 27 2023 19:06:33 GMT+0200 (Eastern European Standard Time)
+[debug] [2023-12-27T17:06:33.973Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-27T17:06:34.038Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-27T17:06:34.040Z] > authorizing via signed-in user (ahmed.a.kasem18@gmail.com)
+[debug] [2023-12-27T17:06:34.040Z] [iam] checking project chatly-89d22 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-12-27T17:06:34.041Z] > refreshing access token with scopes: []
+[debug] [2023-12-27T17:06:34.043Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-27T17:06:34.043Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-27T17:06:34.332Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-27T17:06:34.333Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-27T17:06:34.374Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions [none]
+[debug] [2023-12-27T17:06:34.374Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-27T17:06:34.375Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-27T17:06:35.331Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions 200
+[debug] [2023-12-27T17:06:35.331Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatly-89d22:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-12-27T17:06:35.331Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-12-27T17:06:35.331Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-12-27T17:06:36.255Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-12-27T17:06:36.255Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatly-89d22/serviceAccounts/chatly-89d22@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'chatly-89d22'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2023-12-27T17:06:50.338Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 [none]
+[debug] [2023-12-27T17:06:50.688Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 200
+[debug] [2023-12-27T17:06:50.689Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 {"projectId":"chatly-89d22","projectNumber":"930897860276","displayName":"chatly","name":"projects/chatly-89d22","resources":{"hostingSite":"chatly-89d22","storageBucket":"chatly-89d22.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_7a0e891e-f090-4fb3-aad2-afdacabc61f6"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-12-27T17:06:50.690Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-12-27T17:06:50.690Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-27T17:06:50.692Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-12-27T17:06:50.692Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-27T17:06:50.693Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com [none]
+[debug] [2023-12-27T17:06:50.693Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-27T17:06:50.695Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com [none]
+[debug] [2023-12-27T17:06:50.695Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-27T17:06:51.772Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com 200
+[debug] [2023-12-27T17:06:51.772Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-12-27T17:06:51.781Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com 200
+[debug] [2023-12-27T17:06:51.781Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-12-27T17:06:51.784Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com 200
+[debug] [2023-12-27T17:06:51.785Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-12-27T17:06:51.813Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com 200
+[debug] [2023-12-27T17:06:51.813Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-12-27T17:06:51.813Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig [none]
+[debug] [2023-12-27T17:06:52.202Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig 200
+[debug] [2023-12-27T17:06:52.202Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22/adminSdkConfig {"projectId":"chatly-89d22","storageBucket":"chatly-89d22.appspot.com","locationId":"us-central"}
+[debug] [2023-12-27T17:06:52.203Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs [none]
+[debug] [2023-12-27T17:06:52.717Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs 200
+[debug] [2023-12-27T17:06:52.717Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatly-89d22/configs {}
+[debug] [2023-12-27T17:06:52.719Z] Validating nodejs source
+[debug] [2023-12-27T17:06:53.983Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[debug] [2023-12-27T17:06:53.983Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-12-27T17:06:53.984Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-12-27T17:06:53.993Z] Found firebase-functions binary at '/Volumes/work/motherbeing/chatly/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8528
+
+[debug] [2023-12-27T17:06:54.355Z] Got response from /__/functions.yaml {"endpoints":{"messagesListener":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.created","eventFilters":{"database":"(default)","namespace":"(default)"},"eventFilterPathPatterns":{"document":"messages/{docId}"},"retry":false},"entryPoint":"messagesListener"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Volumes/work/motherbeing/chatly/functions (87.43 KB) for uploading 
+[debug] [2023-12-27T17:06:54.424Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions [none]
+[debug] [2023-12-27T17:06:55.098Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions 200
+[debug] [2023-12-27T17:06:55.099Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/chatly-89d22/locations/-/functions {}
+[debug] [2023-12-27T17:06:55.100Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-12-27T17:06:56.222Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions 200
+[debug] [2023-12-27T17:06:56.223Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/-/functions {}
+[debug] [2023-12-27T17:06:56.224Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) [none]
+[debug] [2023-12-27T17:06:57.189Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) 200
+[debug] [2023-12-27T17:06:57.189Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/chatly-89d22/databases/(default) {"name":"projects/chatly-89d22/databases/(default)","uid":"9a3b8431-d76c-4166-b032-1b63057f98ff","createTime":"2023-12-26T11:37:58.440529Z","updateTime":"2023-12-26T11:37:58.440529Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2023-12-27T16:06:57.740844Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IJi0gZ2NsIMDMITaxrjurYMD"}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-12-27T17:06:57.191Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com [none]
+[debug] [2023-12-27T17:06:57.191Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-27T17:06:57.193Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com [none]
+[debug] [2023-12-27T17:06:57.193Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-27T17:06:57.195Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com [none]
+[debug] [2023-12-27T17:06:57.195Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-27T17:06:57.197Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com [none]
+[debug] [2023-12-27T17:06:57.197Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com x-goog-quota-user=projects/chatly-89d22
+[debug] [2023-12-27T17:06:58.170Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com 200
+[debug] [2023-12-27T17:06:58.170Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/pubsub.googleapis.com [omitted]
+[info] ✔  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2023-12-27T17:06:58.171Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com 200
+[debug] [2023-12-27T17:06:58.171Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/storage.googleapis.com [omitted]
+[info] ✔  functions: required API storage.googleapis.com is enabled 
+[debug] [2023-12-27T17:06:58.173Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com 200
+[debug] [2023-12-27T17:06:58.173Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/eventarc.googleapis.com [omitted]
+[info] ✔  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-12-27T17:06:58.181Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com 200
+[debug] [2023-12-27T17:06:58.181Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatly-89d22/services/run.googleapis.com [omitted]
+[info] ✔  functions: required API run.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-12-27T17:06:58.182Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-12-27T17:06:58.184Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-12-27T17:06:59.287Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-12-27T17:06:59.288Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-930897860276@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"101776600708896459087"}}
+[debug] [2023-12-27T17:06:59.453Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-12-27T17:06:59.454Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/930897860276/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-930897860276@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"111130878048027908414"}}
+[debug] [2023-12-27T17:06:59.455Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy [none]
+[debug] [2023-12-27T17:07:00.379Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy 200
+[debug] [2023-12-27T17:07:00.379Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/930897860276:getIamPolicy {"version":1,"etag":"BwYNb/nRAVk=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:930897860276@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.admin","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/cloudfunctions.serviceAgent","members":["serviceAccount:service-930897860276@gcf-admin-robot.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-930897860276@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com","serviceAccount:chatly-89d22@appspot.gserviceaccount.com"]},{"role":"roles/eventarc.eventReceiver","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com"]},{"role":"roles/eventarc.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-eventarc.iam.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:firebase-service-account@firebase-sa-management.iam.gserviceaccount.com","serviceAccount:service-930897860276@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]},{"role":"roles/firebaserules.system","members":["serviceAccount:service-930897860276@firebase-rules.iam.gserviceaccount.com"]},{"role":"roles/firebasestorage.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-firebasestorage.iam.gserviceaccount.com"]},{"role":"roles/firestore.serviceAgent","members":["serviceAccount:service-930897860276@gcp-sa-firestore.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com","serviceAccount:service-930897860276@gcp-sa-pubsub.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:ahmed.a.kasem18@gmail.com"]},{"role":"roles/run.invoker","members":["serviceAccount:930897860276-compute@developer.gserviceaccount.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-930897860276@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/storage.admin","members":["serviceAccount:firebase-adminsdk-v8r1b@chatly-89d22.iam.gserviceaccount.com"]}]}
+[debug] [2023-12-27T17:07:00.381Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 [none]
+[debug] [2023-12-27T17:07:00.724Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 200
+[debug] [2023-12-27T17:07:00.724Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatly-89d22 {"projectId":"chatly-89d22","projectNumber":"930897860276","displayName":"chatly","name":"projects/chatly-89d22","resources":{"hostingSite":"chatly-89d22","storageBucket":"chatly-89d22.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_7a0e891e-f090-4fb3-aad2-afdacabc61f6"}
+[debug] [2023-12-27T17:07:00.726Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-12-27T17:07:01.623Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-12-27T17:07:01.623Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/967ddf5a-d40c-4c63-8c80-38d0965de255.zip?GoogleAccessId=service-930897860276@gcf-admin-robot.iam.gserviceaccount.com&Expires=1703698622&Signature=DgPaSIdEd11KEyIaBw3sBl3RSNhuW7x8zQfsCd3creArSevxMdFyCYkdSnFXyETuB02kLSkI7H8TKCPHOiPjLHgCNSDZ2FuNhCudweQ0fha4YoG2sR3VVb5bf0mRwt1o7oM4GweZ5SVdF1LFFDS%2BzvdY6FHzO0l%2FD72NuLG26G2b1lqZ9JcKI3u3xvsTwaLeQd3GXxTJzYfeexl5hugQBkQdRzs2zQmpliVIJPFTor9TzkeSClewK09X58OfCB9CvpVgGYmYtmTtxyi3qDVH6SKfnMPfnpYZO%2FzXjkljvC4HwHY2bEdSGWGiJkXhRTE6rORCzTdV6mKt1sgMA5kpxA%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-930897860276-us-central1","object":"967ddf5a-d40c-4c63-8c80-38d0965de255.zip"}}
+[debug] [2023-12-27T17:07:01.624Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/967ddf5a-d40c-4c63-8c80-38d0965de255.zip GoogleAccessId=service-930897860276%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1703698622&Signature=DgPaSIdEd11KEyIaBw3sBl3RSNhuW7x8zQfsCd3creArSevxMdFyCYkdSnFXyETuB02kLSkI7H8TKCPHOiPjLHgCNSDZ2FuNhCudweQ0fha4YoG2sR3VVb5bf0mRwt1o7oM4GweZ5SVdF1LFFDS%2BzvdY6FHzO0l%2FD72NuLG26G2b1lqZ9JcKI3u3xvsTwaLeQd3GXxTJzYfeexl5hugQBkQdRzs2zQmpliVIJPFTor9TzkeSClewK09X58OfCB9CvpVgGYmYtmTtxyi3qDVH6SKfnMPfnpYZO%2FzXjkljvC4HwHY2bEdSGWGiJkXhRTE6rORCzTdV6mKt1sgMA5kpxA%3D%3D
+[debug] [2023-12-27T17:07:01.625Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/967ddf5a-d40c-4c63-8c80-38d0965de255.zip [stream]
+[debug] [2023-12-27T17:07:02.307Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/967ddf5a-d40c-4c63-8c80-38d0965de255.zip 200
+[debug] [2023-12-27T17:07:02.307Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-930897860276-us-central1/967ddf5a-d40c-4c63-8c80-38d0965de255.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 18 (2nd Gen) function messagesListener(us-central1)... 
+[debug] [2023-12-27T17:07:02.318Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions functionId=messagesListener
+[debug] [2023-12-27T17:07:02.318Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions {"name":"projects/chatly-89d22/locations/us-central1/functions/messagesListener","buildConfig":{"runtime":"nodejs18","entryPoint":"messagesListener","source":{"storageSource":{"bucket":"gcf-v2-uploads-930897860276-us-central1","object":"967ddf5a-d40c-4c63-8c80-38d0965de255.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"chatly-89d22\",\"storageBucket\":\"chatly-89d22.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"chatly-89d22","EVENTARC_CLOUD_EVENT_SOURCE":"projects/chatly-89d22/locations/us-central1/services/messagesListener","FUNCTION_SIGNATURE_TYPE":"cloudevent","FUNCTION_TARGET":"messagesListener"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"f7df9a87675d2bd52c57af7b6fefe1df2ac3a009"},"eventTrigger":{"eventType":"google.cloud.firestore.document.v1.created","retryPolicy":"RETRY_POLICY_DO_NOT_RETRY","eventFilters":[{"attribute":"database","value":"(default)"},{"attribute":"namespace","value":"(default)"},{"attribute":"document","value":"messages/{docId}","operator":"match-path-pattern"}],"triggerRegion":"nam5"}}
+[debug] [2023-12-27T17:07:04.104Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions 400
+[debug] [2023-12-27T17:07:04.104Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/chatly-89d22/locations/us-central1/functions {"error":{"code":400,"message":"Could not create Cloud Run service messageslistener. spec.template.spec.containers.resources.limits.cpu: Invalid value specified for cpu. For the specified value, maxScale may not exceed 10.\nConsider running your workload in a region with greater capacity, decreasing your requested cpu-per-instance, or requesting an increase in quota for this region if you are seeing sustained usage near this limit, see https://cloud.google.com/run/quotas. Your project may gain access to further scaling by adding billing information to your account.","status":"INVALID_ARGUMENT"}}
+[warn] ⚠  functions: Your current project quotas don't allow for the current max instances setting of 100. Either reduce this function's maximum instances, or request a quota increase on the underlying Cloud Run service at https://cloud.google.com/run/quotas. 
+[warn] ⚠  functions: You can adjust the max instances value in your function's runtime options:
+	setGlobalOptions({maxInstances: 10}) 
+[error] Failed to create function projects/chatly-89d22/locations/us-central1/functions/messagesListener
+[debug] [2023-12-27T17:07:04.111Z] Total Function Deployment time: 1796
+[debug] [2023-12-27T17:07:04.111Z] 1 Functions Deployed
+[debug] [2023-12-27T17:07:04.111Z] 1 Functions Errored
+[debug] [2023-12-27T17:07:04.111Z] 0 Function Deployments Aborted
+[debug] [2023-12-27T17:07:04.111Z] Average Function Deployment time: 1795
+[info] 
+[info] Functions deploy had errors with the following functions:
+	messagesListener(us-central1)
+[info] i  functions: cleaning up build files... 
+[debug] [2023-12-27T17:07:04.290Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/chatly-89d22/locations/us-central1/repositories/gcf-artifacts/packages/messages_listener [none]
+[debug] [2023-12-27T17:07:04.291Z] >>> [apiv2][query] GET https://us.gcr.io/v2/chatly-89d22/gcf/us-central1/tags/list [none]
+[debug] [2023-12-27T17:07:04.622Z] <<< [apiv2][status] GET https://us.gcr.io/v2/chatly-89d22/gcf/us-central1/tags/list 200
+[debug] [2023-12-27T17:07:04.622Z] <<< [apiv2][body] GET https://us.gcr.io/v2/chatly-89d22/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"chatly-89d22/gcf/us-central1","tags":[]}
+[debug] [2023-12-27T17:07:04.623Z] Could not find image for function projects/chatly-89d22/locations/us-central1/functions/messagesListener
+[debug] [2023-12-27T17:07:05.170Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/chatly-89d22/locations/us-central1/repositories/gcf-artifacts/packages/messages_listener 404
+[debug] [2023-12-27T17:07:05.171Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/chatly-89d22/locations/us-central1/repositories/gcf-artifacts/packages/messages_listener {"error":{"code":404,"message":"Package \"projects/chatly-89d22/locations/us-central1/repositories/gcf-artifacts/packages/messages_listener\" was not found.","status":"NOT_FOUND"}}
+[debug] [2023-12-27T17:07:05.171Z] Functions deploy failed.
+[debug] [2023-12-27T17:07:05.171Z] {
+  "endpoint": {
+    "id": "messagesListener",
+    "project": "chatly-89d22",
+    "region": "us-central1",
+    "entryPoint": "messagesListener",
+    "platform": "gcfv2",
+    "runtime": "nodejs18",
+    "eventTrigger": {
+      "eventType": "google.cloud.firestore.document.v1.created",
+      "retry": false,
+      "eventFilters": {
+        "database": "(default)",
+        "namespace": "(default)"
+      },
+      "eventFilterPathPatterns": {
+        "document": "messages/{docId}"
+      },
+      "region": "nam5"
+    },
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "serviceAccount": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"chatly-89d22\",\"storageBucket\":\"chatly-89d22.appspot.com\",\"locationId\":\"us-central\"}",
+      "GCLOUD_PROJECT": "chatly-89d22",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/chatly-89d22/locations/us-central1/services/messagesListener"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "f7df9a87675d2bd52c57af7b6fefe1df2ac3a009"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "context": {
+      "function": "projects/chatly-89d22/locations/us-central1/functions/messagesListener"
+    },
+    "exit": 1,
+    "message": "Failed to create function projects/chatly-89d22/locations/us-central1/functions/messagesListener",
+    "original": {
+      "name": "FirebaseError",
+      "children": [],
+      "context": {
+        "body": {
+          "error": {
+            "code": 400,
+            "message": "Could not create Cloud Run service messageslistener. spec.template.spec.containers.resources.limits.cpu: Invalid value specified for cpu. For the specified value, maxScale may not exceed 10.\nConsider running your workload in a region with greater capacity, decreasing your requested cpu-per-instance, or requesting an increase in quota for this region if you are seeing sustained usage near this limit, see https://cloud.google.com/run/quotas. Your project may gain access to further scaling by adding billing information to your account.",
+            "status": "INVALID_ARGUMENT"
+          }
+        },
+        "response": {
+          "statusCode": 400
+        }
+      },
+      "exit": 1,
+      "message": "HTTP Error: 400, Could not create Cloud Run service messageslistener. spec.template.spec.containers.resources.limits.cpu: Invalid value specified for cpu. For the specified value, maxScale may not exceed 10.\nConsider running your workload in a region with greater capacity, decreasing your requested cpu-per-instance, or requesting an increase in quota for this region if you are seeing sustained usage near this limit, see https://cloud.google.com/run/quotas. Your project may gain access to further scaling by adding billing information to your account.",
+      "status": 400
+    },
+    "status": 400,
+    "code": 400
+  }
+}
+[debug] [2023-12-27T17:07:05.337Z] Error: Failed to create function messagesListener in region us-central1
+    at /Users/macbookpro/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:291:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.createV2Function (/Users/macbookpro/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:277:30)
+    at async Fabricator.createEndpoint (/Users/macbookpro/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:136:13)
+    at async handle (/Users/macbookpro/.nvm/versions/node/v16.17.0/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions
