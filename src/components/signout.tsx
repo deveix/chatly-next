@@ -15,12 +15,17 @@ import Spinner from "./spinner";
 import {updateUserDoc} from "@/services/profile";
 import {userDocConverter} from "@/types/user/doc";
 import {useRouter} from "next/navigation";
+import {clearFirestoreCache} from "@/utils/firebase";
 
 const SignOut = () => {
   const router = useRouter();
   const auth = useAuth();
   const signOut = async () => {
     await auth.signOut();
+
+    // clear firestore cache to fix a problem in login and re-routing
+    clearFirestoreCache();
+
     router.replace("/");
   };
 

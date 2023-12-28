@@ -6,6 +6,7 @@ import {
   ConfirmationResult,
   RecaptchaVerifier,
   getAuth,
+  onAuthStateChanged,
   signInWithPhoneNumber,
 } from "firebase/auth";
 import {useRouter} from "next/navigation";
@@ -34,14 +35,16 @@ const useSignIn = () => {
   const verify = useRef<RecaptchaVerifier | null>(null);
 
   useEffect(() => {
-    verify.current = new RecaptchaVerifier(
-      "recaptcha-container",
-      {
-        size: "invisible",
-      },
-      auth
-    );
-    verify.current.render();
+    if (!verify.current) {
+      verify.current = new RecaptchaVerifier(
+        "recaptcha-container",
+        {
+          size: "invisible",
+        },
+        auth
+      );
+      verify.current.render();
+    }
   }, [auth]);
 
   // Form Submit
@@ -72,8 +75,8 @@ const useSignIn = () => {
     if (!code) return false;
     try {
       const authResult = await confirmation!.confirm(code);
-      if (authResult.user) router.push("/home");
-      else setError("code", {message: "Invalid code."});
+      // router.push("/home");
+      if (!authResult.user) setError("code", {message: "Invalid code."});
     } catch (error: unknown) {
       if (error instanceof FirebaseError) {
         if (error?.code === "auth/invalid-verification-code") {

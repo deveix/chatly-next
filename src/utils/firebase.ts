@@ -8,3 +8,15 @@ export const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
+
+// clear firestore cache
+declare global {
+  var _reactFirePreloadedObservables: any;
+}
+
+export const clearFirestoreCache = () => {
+  const map = globalThis["_reactFirePreloadedObservables"];
+  Array.from(map.keys()).forEach(
+    (key: any) => key.includes("firestore") && map.delete(key)
+  );
+};

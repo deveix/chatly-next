@@ -5,6 +5,7 @@ import {useSigninCheck} from "reactfire";
 import {useEffect} from "react";
 import ChatPage from "./content";
 import Spinner from "@/components/spinner";
+import {getAuth} from "firebase/auth";
 
 const Home = () => {
   const router = useRouter();

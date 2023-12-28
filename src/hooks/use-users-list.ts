@@ -13,8 +13,12 @@ const useUsersList = () => {
 
   const usersQuery = query<UserDoc>(usersCollection);
   // listen on users list from firestore
-  const {data: users, status: usersStatus} =
-    useFirestoreCollectionData<UserDoc>(usersQuery, {});
+  const {
+    data: users,
+    status: usersStatus,
+    error,
+  } = useFirestoreCollectionData<UserDoc>(usersQuery, {});
+
   // forming dictionary for ease of search in O(1)
   const usersDict = useMemo(() => {
     let dict: UsersMap = {};
