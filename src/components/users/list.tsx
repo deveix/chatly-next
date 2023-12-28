@@ -9,7 +9,7 @@ type Props = {
 };
 const UsersList = ({users, usersStatus}: Props) => {
   return (
-    <div className="flex flex-col mt-8">
+    <div className="flex flex-1 flex-col mt-8">
       <div className="flex flex-row items-center justify-between text-xs">
         <span className="font-bold">Users</span>
         <span className="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">

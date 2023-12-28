@@ -16,7 +16,7 @@ const Home = () => {
       router.push("/sign-in");
   }, [signInCheckStatus, signInCheckResult, router]);
 
-  if (signInCheckStatus !== "success")
+  if (signInCheckStatus !== "success" || !signInCheckResult.signedIn)
     return (
       <div className="flex flex-1 mt-5 justify-center items-center">
         <Spinner size={30} />

@@ -5,6 +5,7 @@ import ChatList from "@/components/chat/list";
 import Image from "next/image";
 import useUsersList from "@/hooks/use-users-list";
 import UsersList from "@/components/users/list";
+import SignOut from "@/components/signout";
 
 const ChatPage = () => {
   // get users list and dictionary [userId]: user
@@ -35,6 +36,7 @@ const ChatPage = () => {
               </div>
             </div>
             <UsersList users={users} usersStatus={usersStatus} />
+            <SignOut />
           </div>
           <ChatList users={usersDict} />
         </div>
