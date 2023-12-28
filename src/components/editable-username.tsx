@@ -20,6 +20,7 @@ const EditableUsername = () => {
   const [text, setText] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // show input on double click
   const handleDoubleClick = () => {
     setIsEditing(true);
   };
@@ -30,6 +31,7 @@ const EditableUsername = () => {
 
   const {status, data: user} = useUser();
 
+  // default text is display name of user
   useEffect(() => {
     if (user?.displayName) setText(user?.displayName);
   }, [user]);
@@ -41,10 +43,13 @@ const EditableUsername = () => {
   const updateUsername = async () => {
     if (!user) return;
     setIsEditing(false);
-    // Save the changes or perform any required actions here
+
+    // update profile
     updateProfile(user!, {
       displayName: text,
     });
+
+    // update user document with name to be visible to other users
     await updateUserDoc(usersCollection, user!, text);
   };
 

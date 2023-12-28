@@ -11,51 +11,25 @@ import SendBox from "./add-msg";
 import useScrollChat from "@/hooks/chat/use-scroll-chat";
 import Spinner from "../spinner";
 import {UsersMap} from "@/types/user/map";
+import {formatMessages} from "@/utils/helper";
+import useChatListen from "@/hooks/chat/use-chat-listen";
 
 type Props = {
   users: UsersMap;
 };
 const ChatList = ({users}: Props) => {
-  const {data: user} = useUser();
-  const firestore = useFirestore();
-
-  const messagesCollection = collection(firestore, "messages").withConverter(
-    messageConverter
-  );
-  const messagesQuery = query<MessageDoc>(
-    messagesCollection,
-    orderBy("created_at", "desc")
-  );
-
+  // load chat list
   const {
-    status: listenerStatus,
-    pageNumber,
+    listenerStatus,
+    messagesList,
     hasMore,
+    pageNumber,
     loadingMore,
-    list,
+    loadMore,
     newMsg,
-    nextPage,
-  } = usePaginatedCollection<MessageDoc>({baseQuery: messagesQuery});
+  } = useChatListen(users);
 
-  const messagesList = useMemo<MessageData[]>(
-    () =>
-      list?.length
-        ? list?.map((msg) => {
-            const msgData = msg.data();
-            return {
-              id: msg.id,
-              ...msgData,
-              username: users[msgData.uid]?.name ?? msgData.username,
-              isOwner: user?.uid === msgData.uid,
-            };
-          })
-        : [],
-    [list, users, user]
-  );
-  const loadMore = () => {
-    if (hasMore) nextPage();
-  };
-
+  // handle chat scroll and loading of previous messages
   const {handleScroll, scrollToBottom, messagesEndRef} = useScrollChat(
     messagesList,
     pageNumber,
@@ -63,6 +37,7 @@ const ChatList = ({users}: Props) => {
     users,
     newMsg
   );
+
   return (
     <>
       <div className="flex flex-col flex-auto h-full p-6">

@@ -8,12 +8,15 @@ import useSignIn from "@/hooks/use-sign-in";
 
 const SignIn = () => {
   const router = useRouter();
+
+  // check if signed in reroute to home
   const {status, data: signInCheckResult} = useSigninCheck();
   useEffect(() => {
     if (signInCheckResult?.signedIn === true && status == "success")
       router.push("/home");
   }, [status, signInCheckResult, router]);
 
+  // sign in form hook
   const {
     control,
     trigger,

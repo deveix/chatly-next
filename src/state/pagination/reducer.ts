@@ -10,9 +10,11 @@ export function paginationStateReducer<T = firestore.DocumentData>(
 ): PaginationState<T> {
   let page: firestore.QueryDocumentSnapshot<T>[];
   let list, sorted;
+
   switch (action.type) {
     case ActionKind.NextPage:
       page = action.page;
+      // sorting to get the first element to get the element after it
       sorted = page.sort(
         (a, b) =>
           (a.data() as PaginationItem).created_at -
@@ -27,6 +29,7 @@ export function paginationStateReducer<T = firestore.DocumentData>(
       };
     case ActionKind.PreviousPage:
       page = action.page;
+      // sorting to get the first element to get the element after it
       sorted = page.sort(
         (a, b) =>
           (a.data() as PaginationItem).created_at -
@@ -50,12 +53,14 @@ export function paginationStateReducer<T = firestore.DocumentData>(
         rowsPerPage: action.pageSize, // action payload
       };
     case ActionKind.RecordsLoaded:
+      // check newly added docs
       let updates = action.data?.docChanges()?.length
         ? action.data
             ?.docChanges()
             ?.filter((dc) => dc.type === "added")
             ?.map((dc) => dc.doc)
         : [];
+      // sorting to show all messages shown in created_at
       list = [...state.list, ...updates].sort(
         (a, b) =>
           (a.data() as PaginationItem).created_at -
@@ -69,6 +74,7 @@ export function paginationStateReducer<T = firestore.DocumentData>(
       };
 
     case ActionKind.OldRecordsLoaded:
+      // get docs as it is without changes since it's not a listener
       list = [
         ...state.list,
         ...(action.data?.docs?.length ? action.data?.docs : []),

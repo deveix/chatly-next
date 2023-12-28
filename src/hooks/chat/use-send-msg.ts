@@ -1,7 +1,6 @@
 // use-scroll-chat.ts
 import {useFirestore, useUser} from "reactfire";
 import {collection, addDoc} from "firebase/firestore";
-import {messageConverter} from "@/types/message/doc";
 import {ChangeEvent, KeyboardEvent, useState} from "react";
 import moment from "moment";
 
@@ -28,6 +27,7 @@ const useSendMsg = (scrollToBottom: () => void) => {
     if (!message || adding) return;
     setAdding(true);
 
+    // add message to collection
     await addDoc(messagesCollection, {
       body: message,
       uid: user!.uid,

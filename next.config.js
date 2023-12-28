@@ -1,4 +1,2 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  exclude: ["functions"],
-};
+module.exports = {};

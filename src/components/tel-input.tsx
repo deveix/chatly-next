@@ -23,7 +23,10 @@ interface Props {
 const TelInput = ({control, trigger, name, required, errors}: Props) => {
   const validatePhoneNumber = useCallback(
     (inputNumber: string, isDirty: boolean, country: any) => {
+      // check if not dirty meaning not edited
       if (!isDirty) return true;
+
+      // validate phone wihout country dial code
       if (
         !inputNumber ||
         inputNumber?.replace(country.dialCode, "")?.trim() === ""

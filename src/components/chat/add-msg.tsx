@@ -7,6 +7,7 @@ type InputProps = {
 };
 
 const SendBox = ({scrollToBottom}: InputProps) => {
+  // send msg form hook
   const {handleKeyDown, handleChange, message, addMessage, adding} =
     useSendMsg(scrollToBottom);
 
